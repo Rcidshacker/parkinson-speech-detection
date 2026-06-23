@@ -1,0 +1,67 @@
+# ── Virtual environment ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Large datasets (audio) — download separately; see README ─────────────────
+Dataset/
+
+# ── Generated feature CSVs (re-derive by running the pipeline) ───────────────
+features/*.csv
+features/opensmile/*.csv
+features/handcrafted/
+features/modeling/
+
+# ── Run logs ─────────────────────────────────────────────────────────────────
+logs/
+stage_1_baseline/logs/
+*.log
+
+# ── Evaluation results (re-derive by running the pipeline) ───────────────────
+results/
+scripts/results/
+stage_2_feature_grouping/results/
+
+# ── Generated Excel reports ───────────────────────────────────────────────────
+stage_1_baseline/comprehensive_analysis_report*.xlsx
+stage_1_baseline/pipeline_results_summary.xlsx
+stage_2_feature_grouping/Comprehensive_CMN_Results_Report.xlsx
+
+# ── LaTeX university report template (not project code) ──────────────────────
+CSE_BTech_Major_project_Internship_Report_template/
+CSE_BTech_Major_project_Internship_Report_template.zip
+
+# ── Claude / IDE settings ─────────────────────────────────────────────────────
+.claude/
+
+# ── OS / editor noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ── Team member repos (nested git repos) ─────────────────────────────────────
+stage_1_baseline/team_repos/
+
+# ── Meeting recordings & large binary archives (not code) ────────────────────
+_archive/**/*.m4a
+_archive/**/*.mp4
+_archive/**/*.mp3
+_archive/**/*.zip
+_archive/meetings/Audio files/
+_archive/Literature/meetings/
+
+# ── Temp / scratch ────────────────────────────────────────────────────────────
+*.tmp
+*.bak
+tmp/
+temp/

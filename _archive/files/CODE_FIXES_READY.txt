@@ -1,0 +1,190 @@
+===============================================================================
+COPY-PASTE CODE FIXES
+===============================================================================
+
+## FILE 1: prepare_egemaps_training.py
+
+Replace the entire main() function with this (Lines 56–120):
+
+```python
+def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Prepare eGeMAPS training datasets")
+    parser.add_argument('--egemaps_csv', default='features/features_egemaps_8k.csv',
+                        help='Path to eGeMAPS features CSV')
+    parser.add_argument('--output_dir', default='features/opensmile',
+                        help='Output directory for training CSVs')
+    args = parser.parse_args()
+
+    print("=" * 65)
+    print("  Prepare eGeMAPS Training Datasets")
+    print("=" * 65)
+
+    # 1. Load the combined eGeMAPS CSV
+    if not os.path.exists(args.egemaps_csv):
+        print(f"[ERROR] Not found: {args.egemaps_csv}")
+        print("  → Make sure you have extracted features_egemaps_8k.csv")
+        sys.exit(1)
+
+    df = pd.read_csv(args.egemaps_csv)
+
+    print(f"\nLoaded:")
+    print(f"  eGeMAPS : {len(df)} rows | PD={(df['label_binary']==1).sum()} HC={(df['label_binary']==0).sum()}")
+
+    # 2. Identify feature columns
+    feature_cols = [c for c in df.columns if c not in META_COLS]
+    
+    # Flexible assertion (not brittle)
+    if len(feature_cols) != 88:
+        print(f"[WARNING] Expected 88 features, got {len(feature_cols)} — proceeding anyway")
+    
+    biomarker_eq, mfcc_feats, non_mfcc = categorise_features(feature_cols)
+
+    print(f"\neGeMAPS feature breakdown:")
+    print(f"  All features    : {len(feature_cols)}")
+    print(f"  Biomarker equiv : {len(biomarker_eq)}  → {biomarker_eq}")
+    print(f"  MFCC features   : {len(mfcc_feats)}")
+    print(f"  Non-MFCC        : {len(non_mfcc)}")
+
+    # 3. Create output directory
+    os.makedirs(args.output_dir, exist_ok=True)
+
+    # 4. Save full 88 features
+    out_full = os.path.join(args.output_dir, "training_egemaps_full88f.csv")
+    df[META_COLS + feature_cols].to_csv(out_full, index=False)
+    print(f"\n[1] Saved: {os.path.basename(out_full)}  ({len(feature_cols)} features)")
+
+    # 5. Save biomarker equivalent (6f)
+    out_bio = os.path.join(args.output_dir, "training_egemaps_biomarker_eq6f.csv")
+    df[META_COLS + biomarker_eq].to_csv(out_bio, index=False)
+    print(f"[2] Saved: {os.path.basename(out_bio)}  ({len(biomarker_eq)} features)")
+
+    # 6. Save no-MFCC (72f)
+    out_nomfcc = os.path.join(args.output_dir, "training_egemaps_no_mfcc_72f.csv")
+    df[META_COLS + non_mfcc].to_csv(out_nomfcc, index=False)
+    print(f"[3] Saved: {os.path.basename(out_nomfcc)}  ({len(non_mfcc)} features)")
+
+    print("\n" + "=" * 65)
+    print("  DONE. Now run analysis:")
+    print("=" * 65)
+    print("  python scripts\\dataset_wise_analysis_v2.py --data_file features/training_egemaps_full88f.csv")
+    print("  python scripts\\dataset_wise_analysis_v2.py --data_file features/training_egemaps_biomarker_eq6f.csv")
+    print("  python scripts\\dataset_wise_analysis_v2.py --data_file features/training_egemaps_no_mfcc_72f.csv")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**How to run (after save):**
+```bash
+cd "C:\Users\Lenovo\Desktop\Code\2026\BE mini project"
+python scripts\prepare_egemaps_training.py --egemaps_csv features\features_egemaps_8k.csv
+```
+
+Or with defaults:
+```bash
+python scripts\prepare_egemaps_training.py
+```
+
+===============================================================================
+
+## FILE 2: dataset_wise_analysis_v2.py
+
+Find this section (lines ~240–290, in the cross-dataset evaluation loop):
+
+**BEFORE (WRONG):**
+```python
+fold_count = 0
+fold_auc_values = []
+for train_idx, test_idx in cv.split(X, y, groups):
+    fold_count += 1
+    
+    X_train_fold = X[train_idx]
+    X_test_fold = X[test_idx]
+    y_train_fold = y[train_idx]
+    y_test_fold = y[test_idx]
+    
+    # ... train models ...
+    
+    fold_auc_values.append(model_aucs)
+    
+    if fold_count == 1:
+        break  # ❌ EXITS AFTER FIRST FOLD!
+
+auc_mean = np.mean(fold_auc_values[0]) if fold_auc_values else 0
+```
+
+**AFTER (CORRECT):**
+```python
+# Collect ALL fold results, not just first
+all_fold_results = []
+
+for fold_idx, (train_idx, test_idx) in enumerate(cv.split(X, y, groups)):
+    logger.info(f"    Fold {fold_idx+1}/{N_FOLDS}...")
+    
+    X_train_fold = X[train_idx]
+    X_test_fold = X[test_idx]
+    y_train_fold = y[train_idx]
+    y_test_fold = y[test_idx]
+    
+    # ... train models ...
+    
+    all_fold_results.append({
+        'fold': fold_idx,
+        'auc_values': model_aucs,
+        'f1_values': model_f1s,
+        # ... any other metrics you compute ...
+    })
+
+# After loop completes (ALL folds), compute aggregate metrics
+if all_fold_results:
+    # Stack all fold AUC values
+    all_aucs = np.array([r['auc_values'] for r in all_fold_results])  # shape: (n_folds, n_models)
+    all_f1s = np.array([r['f1_values'] for r in all_fold_results])
+    
+    # Mean & std across folds
+    auc_mean = np.mean(all_aucs, axis=0)  # mean per model
+    auc_std = np.std(all_aucs, axis=0)    # std per model
+    f1_mean = np.mean(all_f1s, axis=0)
+    f1_std = np.std(all_f1s, axis=0)
+    
+    logger.info(f"    Cross-fold AUC (mean ± std):")
+    for i, model_name in enumerate(model_names):
+        logger.info(f"      {model_name}: {auc_mean[i]:.4f} ± {auc_std[i]:.4f}")
+    
+    # Use fold-averaged metrics for final report
+    metrics_to_report = {
+        'auc_mean': auc_mean,
+        'auc_std': auc_std,
+        'f1_mean': f1_mean,
+        'f1_std': f1_std,
+    }
+else:
+    logger.error("No folds completed!")
+    sys.exit(1)
+```
+
+**Key changes:**
+- ✅ Removes `if fold_count == 1: break`
+- ✅ Collects results from ALL folds into `all_fold_results`
+- ✅ Computes mean & std **across all folds** (not just first)
+- ✅ Logs per-fold progress for transparency
+
+===============================================================================
+BEFORE YOU RUN:
+
+1. Make backups of both scripts:
+   cp scripts\prepare_egemaps_training.py scripts\prepare_egemaps_training.py.bak
+   cp scripts\dataset_wise_analysis_v2.py scripts\dataset_wise_analysis_v2.py.bak
+
+2. Apply the changes above
+
+3. Test with:
+   python scripts\prepare_egemaps_training.py
+   python scripts\dataset_wise_analysis_v2.py --data_file features\features_sustained_a.csv
+
+4. Check for errors in the output — both scripts should run without assertion failures
+
+===============================================================================

@@ -1,0 +1,905 @@
+Project Catch Up!
+Mon, Mar 9, 2026
+
+1:33 - Unidentified Speaker
+Good evening, sir.
+
+1:38 - Unidentified Speaker
+Good evening.
+
+1:41 - Pramod Kachare
+Is Sandeep joining?
+
+1:43 - Achyut Maheshka
+I guess he was saying on the meet on the group. Okay, yeah.
+
+2:20 - Pramod Kachare
+What are these fireflies.ai and Read.AI? Are they for some use?
+
+2:27 - Achyut Maheshka
+So they'll collect the meeting notes, like Gemini will just write down the conversation and it will help us. Okay. And how do you add those? So while starting the meet, there's an option to add Gemini to the conversation. And at the end of the meet, they give you a summarized document for all the conversation in the meet. And you can share it between the team members, which is automatically been shared to them. Okay.
+
+2:52 - Pramod Kachare
+And so it will basically do speech to text conversion, right? Yes.
+
+2:58 - Achyut Maheshka
+Whatever we speak over here would be converted over there. Okay. Okay.
+
+3:04 - Pramod Kachare
+And there will be a diarization also like who speaks what and when? Yes, sir. Yes, sir.
+
+3:12 - Unidentified Speaker
+Okay.
+
+3:16 - Pramod Kachare
+Sandeep has also added something.
+
+3:25 - Dr. Sandeep Sangle
+Last time I installed it, so automatically it added whenever I started. It's OK.
+
+3:32 - Pramod Kachare
+OK, go ahead and start.
+
+3:37 - Dr. Sandeep Sangle
+OK, so Amruthal will go ahead with the presenters.
+
+3:44 - Mrudul Jadhav
+Hello, sir. Just a second. Share my screen yeah should we wait for Sir, he is joining.
+
+3:58 - Niharika Mishra
+OK.
+
+4:16 - Dr. Sandeep Sangle
+Niharika and Ruchit? Yes, sir.
+
+4:22 - Dr. Sandeep Sangle
+going internship or you continue with this project?
+
+4:26 - Niharika Mishra
+Sir, I did update HOD ma'am about this like you told me to update her regularly. So, I did update her. So, we didn't receive any offer letter from Yes Bank yet. He just kept it postponing and then we did receive a confirmation from Vantage Point Oil Achyut Me and Hruchal. So, we are expected to get the a letter today, but then promoter said that it's already delayed a lot, department won't accept it. Yes.
+
+4:58 - Dr. Sandeep Sangle
+Yeah.
+
+4:59 - Niharika Mishra
+So I'll go to a Chodi ma'am tomorrow. If she accepts it, then we shall go ahead with that. If she doesn't, then we'll continue the project. Okay. She won't accept.
+
+5:10 - Dr. Sandeep Sangle
+Today there was a case.
+
+5:11 - Pramod Kachare
+I think Sandeep knows the case better.
+
+5:14 - Dr. Sandeep Sangle
+She will not accept right now, any internships. Okay.
+
+5:18 - Niharika Mishra
+But sir, I'll have to go to her because my name is an internship, right?
+
+5:23 - Dr. Sandeep Sangle
+Yes, but that time you shared me the link of your main screenshot.
+
+5:32 - Dr. Sandeep Sangle
+That I'm showing to the ma'am and ma'am said, OK, at that time. But till now, you are not submitting me any original or hard copy of your internship letter. Even I sent her that screenshot, sir.
+
+5:44 - Niharika Mishra
+She was like, take a week or two and then just start doing it and I couldn't submit anything so it's all in between situations.
+
+5:58 - Mrudul Jadhav
+Yeah in any case we thought it would be better to add all the names.
+
+6:06 - Pramod Kachare
+Okay since we are on the topic, will it be possible for all four of you being part of one group? I think Sandeep may It's possible, no problem for that.
+
+6:22 - Dr. Sandeep Sangle
+The four members, minimum four members are okay in one group, no problem. But more than four, I think ma'am is not allowed. That's okay. Four are there.
+
+6:34 - Pramod Kachare
+Okay, great. Go ahead, start.
+
+6:38 - Mrudul Jadhav
+Okay, so our topic, as you suggested, was development of a speech-based foundation model. For Parkinson's disease. So first of all the main problem with diagnosis of Parkinson's right now is that the diagnosis relies on clinical motor symptoms like tremors and rigidity but these symptoms appear only after like most of the in the later stages like 50 to 70 percent dopamine loss. So at that point even with treatments, it's not like, it's not preventive. So the opportunity of this is like, we can use the changes which occur in our speech, which like happened almost a decade earlier, to use them as biomarkers to detect the disease.
+
+7:38 - Mrudul Jadhav
+Most research is till now limited to single language or small groups of people and they fail to differentiate the Parkinson's from like similar disorders such as MSA or PSP, multiple systems atrophy and progressive supranuclear palsy. So we suggest a scalable and non-invasive digital biomarker using AI to analyze the and linguistic patterns through this project. So the primary goal is to train a foundation model so that it can be used across global populations like cross-language stability, ensuring the biomarkers work across multiple linguistic structures and distinguishing the Parkinson's from MSA and PSP. And also early prediction and sex aware analysis because the physiological there are vocal differences between male and female cohorts and this was our literature survey this was this tables specify like the different data sets used across various papers so we found open-source datasets among them almost 8, 8 datasets 7 we found were open-sourced and they are across different languages so we would be using them and these are the parameters for the datasets along with the metadata, different types of metadata across the datasets.
+
+9:44 - Mrudul Jadhav
+Then this is one abstract about the various features of datasets like volume and scale. There are over 10 datasets containing around 12,000 plus recording samples and there are ranging across which include English, Spanish, Zec, Mandarin, Hindi, Arabic, etc.
+
+10:11 - Mrudul Jadhav
+The main problems here is like the different data sets. They are the recordings are like the audio signals are in different resolutions, like some use telephone audio. It's almost eight kilohertz, then high resolution clinical audio, which is 40 Then there is also clinical depth, medication status, UPDRS scores and MOCA scores and the class balance. Equal representation of sex and disease stages. So this was a methodology which we searched about which could be used. First data acquisition and preprocessing, unifying and resampling of all audio files to a standard rate of 16 kilohertz. Then voice activity detection to isolate the speech segments for pause analysis. Then second step is automated feature extraction, acoustic, extracting the MFCCs, perturbation like jitter or shimmer and formant. Using partial mouth. Then linguistic there is multi-language transcriptions via OpenAI Whisper for syntax and lexical density analysis. Then step foundation 3 model architecture training a deep learning encoder CNNR transformer to learn language speech patterns. Then step 4 is classification and evaluation for multi-class diagnosis as there is Parkinson's, there is MSA, PSP and HILDI and leave one language leave one language out cross-validation method so we have made this as an abstract we would also like your starts on the methodology parts.
+
+12:26 - Pramod Kachare
+Is there more slides? No, there are references. Can you go to the start of the slides?
+
+12:43 - Pramod Kachare
+title page.
+
+12:46 - Pramod Kachare
+Okay, see one of the problem here is it's just saying that development of a speech based foundation model for Parkinson's disease does not indicate that you have multiple languages does not indicate that you have multiple variability and also does not what you it's not like a development. So I would say skip the word development just say a speech based foundation model for Parkinson's disease and try to also revise you can think of some title where we can add somehow all the kinds of variability that we want to consider.
+
+13:25 - Pramod Kachare
+So like speech biomarkers analysis for this Parkinson's disease detection or some foundation model driven speech analysis for early detection. So one of the term which I want to be clear when you start the project is early detection and as any common person would do is once you they see an early detection everybody thinks that okay early detection cannot be done okay which we are also proving you have also have one slide on that very clearly that what early detection with respect to what you are talking about early the time frame is or time reference is very different we're not saying the disease has not even happened and we are giving some early markers we are saying that diseases already happened but before you get to the motor disease motor what you call it as deterioration like that yeah some kind of motor markers okay before that you are giving some early markers for speech-based detection okay so that is one term that should be there in the title and you should be able to clarify that on one or two slides. Okay, sir. It will be a very common question.
+
+14:42 - Unidentified Speaker
+Okay.
+
+14:43 - Dr. Sandeep Sangle
+But in data set, there is any early detection kind of data is available so we can easily class categorize it. In the data set, such kind of the variability or such kind of classes are available for the early detection.
+
+15:02 - Pramod Kachare
+No, there are no classes. As far as I have read, I read their research literature part. So there are no classes as such, but they have MOCA scores and UPDRS scores. Okay. So based on that, they may be able to do that. Yeah.
+
+15:17 - Mrudul Jadhav
+Like for like in all the datasets, like only a multi-class classification for certain diseases, which have a similar symptoms to Parkinson's, but it wasn't anywhere like early detection specifically.
+
+15:39 - Pramod Kachare
+Okay, so that is one thing about the title. Let me just copy what I have in my mind so that it will be on the record.
+
+15:51 - Pramod Kachare
+So one of the thing that I have is foundation model. I'm just typing in the chat. So that this nodes thing that can capture it.
+
+16:09 - Dr. Sandeep Sangle
+Achyut and Mrudul, is there any data set that that we can combine the particular data set with their variability and their acquisition method and the languages are similar. So we can combine the two or three data set for the analysis.
+
+17:02 - Achyut Maheshka
+since there are a couple of data sets which could be combined, like they have multiple voice recordings and vowels common, and they are most commonly available on Kaggle, which could be imported from there. And multiple papers have been using the same data set.
+
+17:21 - Dr. Sandeep Sangle
+I saw the, I see this, whatever the sampling frequencies are 44.1. Is it correct?
+
+17:30 - Dr. Sandeep Sangle
+And there is a number of methods of the acquisition. Like, phone and recording rooms.
+
+17:41 - Mrudul Jadhav
+Yeah, like, that is one of the challenges among the data sets. Like, some data sets are recorded from studio or mobile.
+
+17:55 - Achyut Maheshka
+Yeah, and they have different this.
+
+17:58 - Mrudul Jadhav
+frequency range like from the phone some are of 8 kilohertz then some are from studio and have a different audio quality of 48 kilohertz so that is one challenge and it was like suggested that we change the quality to a standard format like almost 60 kilohertz was suggested as such.
+
+18:29 - Unidentified Speaker
+Okay.
+
+18:37 - Pramod Kachare
+Now, another thing that I want to know is you're writing in this gender ratio, male to female.
+
+18:47 - Pramod Kachare
+Is that gender ratio or something else?
+
+18:51 - Mrudul Jadhav
+Yes, it's gender ratio.
+
+18:53 - Pramod Kachare
+So first entry 3 is to 1 there are three times the male speakers than the female ones.
+
+19:05 - Mrudul Jadhav
+Yes. Yes.
+
+19:08 - Unidentified Speaker
+Okay.
+
+19:08 - Pramod Kachare
+Then why do you have something as odd as 82 to 61? 68 30 is to 20.
+
+19:24 - Pramod Kachare
+Is it just that you forgot to find the common factor or there is some significance to that?
+
+19:28 - Achyut Maheshka
+We didn't normalize that to a common factors. Okay.
+
+19:36 - Unidentified Speaker
+Okay.
+
+19:36 - Pramod Kachare
+Fine. Then it's okay. I thought there is some we can Just find the common factor and write the exact ratio. So you should be able to get that. Then, okay. Then what is the difference between this meds on and off or untreated What is the significance?
+
+20:00 - Achyut Maheshka
+Okay, please find out.
+
+20:27 - Pramod Kachare
+Uh, you're seeing some of the availability. I'm just going to the next column. Availability. So open means all the four data sets you have already downloaded.
+
+20:37 - Achyut Maheshka
+Uh, it's an open source data set, which could be easily downloaded from the online products. And a few of them are on the Kaggle.
+
+20:45 - Pramod Kachare
+That's okay. Uh, but have you downloaded? See the reason being downloaded here. Okay. Okay. The reason being, I've also read some of my papers, which I've also shared with they do say that the dataset is available here there this format but when you actually go to do some of these things they actually get the access to the data it is either not available or not available in the format required like instead of giving the original wave files they give only the features because the original paper which was published that has features okay okay so do check I I'm doubtful about the last data set that you have UCI.
+
+21:27 - Achyut Maheshka
+Okay.
+
+21:28 - Pramod Kachare
+Then check about the third one, IEEE data code. So it does require to log in and log in requires you to pay for that.
+
+21:37 - Achyut Maheshka
+Okay. Okay. So you check those things.
+
+21:41 - Pramod Kachare
+Data code login. I can get it done. That's not a problem. Check the last one, whether you have actual wave files available.
+
+21:51 - Pramod Kachare
+Okay, that's one. Then language you have EN and English are same or is there a difference?
+
+22:04 - Achyut Maheshka
+It's the same.
+
+22:05 - Unidentified Speaker
+Yeah, it's the same.
+
+22:07 - Pramod Kachare
+Okay, so just write the common language and then CZ would be the check red, the last one.
+
+22:13 - Mrudul Jadhav
+Yes.
+
+22:15 - Pramod Kachare
+okay just use common denomination whatever you are comfortable with that's okay g r I t what's I t c z is french sorry c z is czech fran french german I I'm not very sure.
+
+22:43 - Pramod Kachare
+Should be some kind of European language because others are European.
+
+22:55 - Achyut Maheshka
+I don't know right now. I need to check all of that.
+
+22:58 - Pramod Kachare
+That's okay. At least one of you just keep noting all these points. We need to clear these things first.
+
+23:06 - Achyut Maheshka
+Yeah, sure sir.
+
+23:07 - Niharika Mishra
+Sir, I am not in your town. Good, good.
+
+23:10 - Pramod Kachare
+Okay, so use GE instead of GER. Germany is GE only, standard denomination. Then find out what is IT. What would be SP?
+
+23:29 - Achyut Maheshka
+Um, Italian, sir.
+
+23:32 - Pramod Kachare
+Oh, okay. Okay. I thought so. Good. Good. Okay. Uh, then I think we are missing some data sets.
+
+23:42 - Mrudul Jadhav
+Is it just a second? Hmm. Hmm.
+
+23:52 - Mrudul Jadhav
+this slide.
+
+24:00 - Pramod Kachare
+Okay. Okay.
+
+24:06 - Pramod Kachare
+So if I read it correctly, you should be able to get seven data sets. Yes. Yes. Okay. Out of seven, five of them have sustained vowels. Don't know about the other but five definitely has because you have already written it.
+
+24:24 - Mrudul Jadhav
+Yes, sir.
+
+24:26 - Pramod Kachare
+Okay.
+
+24:29 - Pramod Kachare
+Fine. Uh, what do you mean by restricted is, I mean, it's not available or you have to apply or do something for getting those? Yes, sir.
+
+24:41 - Mrudul Jadhav
+Organization to get access for that.
+
+24:46 - Unidentified Speaker
+Okay.
+
+24:47 - Pramod Kachare
+Uh, okay. Okay, I'll tell you what to do. So, okay, this is the end of it.
+
+24:56 - Pramod Kachare
+We have other data sets.
+
+24:58 - Mrudul Jadhav
+Yes. Okay, fine.
+
+25:00 - Pramod Kachare
+Okay. Now, all the data set that you have shown, whether restricted, private or open, all of them Yes, sir.
+
+25:16 - Unidentified Speaker
+OK.
+
+25:17 - Pramod Kachare
+And you must have found out that there are many data sets over which speech data is not available.
+
+25:26 - Mrudul Jadhav
+Yeah, there was some like that as well. But we didn't look more into it.
+
+25:34 - Pramod Kachare
+It's OK. OK. Just think about this. I'm just proposing an idea. When you are discussing about the literature, one section as data set prepare one slide in which you are going to have a table first row in the table no raw data only features or only features and second one raw data okay then in the first one features you just write all the papers that are having data sets but they do not provide the speech data okay In the second you just provide the details of all the papers which are giving you the data and in that then you have three sections restricted, private and open and then you differentiate according to those.
+
+26:30 - Pramod Kachare
+Then on the next slide just discuss about the open data sets.
+
+26:38 - Pramod Kachare
+Is that okay?
+
+26:41 - Mrudul Jadhav
+Yeah, sure, sure. Okay.
+
+26:43 - Pramod Kachare
+So this table can also be reformed, like grouping all the restricted ones on one side, private, and then open. The whole idea is, I know that we are looking for open data set, but somebody who's new or who is limited by time would be able to look in the new format better. He knows where to concentrate.
+
+27:08 - Achyut Maheshka
+Okay.
+
+27:10 - Pramod Kachare
+So just reform the table, use the same table when you're making the report. That's okay. Okay. But, um, there also, you can make the one more column for restricted private and everything, or maybe arrange them accordingly and you should be able to get this done.
+
+27:27 - Mrudul Jadhav
+Okay. So fine.
+
+27:29 - Pramod Kachare
+That's one. Then, uh, collect all the data set which are restricted. I mean we are supposed to send an email request. Get the emails or send me a citation and the email or just direct me to the paper and I will send all the emails. I have already sent emails to some of those. Some I have got a response, some I have not yet. But at least we will keep a track of those things. So I will do those emailing part and I will keep a track of those. Okay. Um, there is one data set, which we are missing is PC Gita.
+
+28:13 - Dr. Sandeep Sangle
+So very famous.
+
+28:14 - Pramod Kachare
+Sorry. It's in that different literature book.
+
+28:17 - Achyut Maheshka
+So we have multiple sheets, which we were working on prior. So it's on, I can show you one, which I have on my local. That's okay.
+
+28:26 - Pramod Kachare
+I'm just saying it is missing in this listing. So maybe it is, uh, there are more on the other.
+
+28:36 - Pramod Kachare
+Why these are differently.
+
+28:37 - Achyut Maheshka
+So I was working prior, very behind on my local system. That's why it's over here. No, that's okay. But these could be part of that table, right?
+
+28:49 - Pramod Kachare
+Yes. I add those over there.
+
+28:51 - Achyut Maheshka
+Okay. Okay.
+
+28:52 - Pramod Kachare
+No, I just meant, is there a problem with this data sets? Because I know PC.
+
+28:58 - Mrudul Jadhav
+Okay. Okay.
+
+29:01 - Pramod Kachare
+So just add these data sets, um, then get it there and write numbers wherever possible. Like if you are writing, uh, data sets, only features right below that number, a data set, uh, audio right below that number, private, how many, this, how many, this, how many, so that you would be able to convince people that you have already gone through so many things and now you have boiled down to only these data sets. There's a reason why you have come up to only these data sets. It's not like you have searched only these many things.
+
+29:32 - Mrudul Jadhav
+Okay.
+
+29:34 - Achyut Maheshka
+Okay. Now let's go back to the PPT.
+
+29:47 - Pramod Kachare
+me just retag it. Okay.
+
+29:54 - Pramod Kachare
+Now, let us see.
+
+29:58 - Pramod Kachare
+Okay, there are, okay, one second. What is happening is there are two presentations, so I have to untag one, right? Yeah.
+
+30:10 - Pramod Kachare
+now next one was okay this is the next one okay now in the next one you're showing me a list of features yeah as features which were in like the different data sets which were specified right okay so before you, what do you think? Should we discuss the dataset details first or you would like to do that later when you have finalized things?
+
+30:50 - Mrudul Jadhav
+Yeah, we can do this, but what will you suggest?
+
+30:58 - Dr. Sandeep Sangle
+I think, first, we have to finalize the data set. And then, according to that, we can go ahead with the features. What do you think about it, Pramod?
+
+31:12 - Pramod Kachare
+I mean, they have finalized the data set. I'm just thinking whether we should spend a few more slides on discussing each data set details.
+
+31:21 - Unidentified Speaker
+Yes.
+
+31:22 - Dr. Sandeep Sangle
+But about the features, I think, after the finalization of the data set then we can go ahead with the selection of the features and because if there is a number of feature related data set and some other there is the audio signal data sets so as the as we finalize as per the data set we can go ahead with the features also then and also there is different languages are also there and then we have to think about is it possible to combine a two data set or to generalize the model based on the different region based on the different languages and based on the different acquisition types I mean you mean vowel sentences right yes
+
+32:22 - Unidentified Speaker
+Correct. True.
+
+32:23 - Pramod Kachare
+Very true. Okay. So what I would suggest is, let's keep the flow as you have and all the details that Sandeep is suggesting, you can have that as a later on plan so that people will keep up with you. Otherwise you will be explaining the plan here and by the time you actually show something, they may forget. So just maintain the flow as you have. Here, when you are showing the features, I do not know whether these features are coming from some papers or they are just coming as your own thoughts or based on some one particular data set. So see different papers just like data set. How many people are using how many of these data set which people are using what it's a common practice like if you are finalized five data sets just show to the people how many people or how many researchers in the literature are using these data set that will give people a confidence okay this is not something which is out of the blue it's very commonly used so you're also using the same thing same goes with the features.
+
+33:39 - Achyut Maheshka
+We'll mention the number of papers used over here and we'll add why we are going ahead with this one. Correct.
+
+33:48 - Pramod Kachare
+Okay. That last part in software or library is for our information. We need not tell people what, why we are doing it or how we are doing it. That's an implementation detail. So we can skip that, have a little bit more space and probably add one column regarding the papers or other authors, like F0 is used by how many, Jitter is used by how many, some details of those, like some small citation or something.
+
+34:20 - Mrudul Jadhav
+That's one.
+
+34:22 - Pramod Kachare
+Category is great. I would suggest move category to as a first column so that you can show category wise like all phonetry part one, all articulatory, then all temporal, all spectral and so on and so forth. Okay, sure.
+
+34:41 - Dr. Sandeep Sangle
+That's okay. Unit is not required.
+
+34:45 - Pramod Kachare
+These are very common things. So unit is not required. Description is also not required, I think.
+
+34:53 - Dr. Sandeep Sangle
+It's OK. It's a short description.
+
+34:55 - Pramod Kachare
+But if you want, yeah, I can, they can remove it.
+
+35:00 - Dr. Sandeep Sangle
+Most of the generalized learning, the parameters, shimmers, jitters, SNR, so everyone knows the description of that. Everyone in this speech. That's a problem. Examiner may not be from speech.
+
+35:17 - Pramod Kachare
+So be careful about those. That's okay. So that's one.
+
+35:28 - Pramod Kachare
+How did you get the PD signature?
+
+35:39 - Mrudul Jadhav
+So it was there in the papers. I think I read about it somewhere. Okay.
+
+35:46 - Pramod Kachare
+Then add a citation.
+
+35:48 - Mrudul Jadhav
+Okay.
+
+35:50 - Pramod Kachare
+Whichever paper says that, I mean, it's understandable. Not, um, something that is contradictory, but it's better to have a citation that, okay, this is not my thought. I'm not proposing this. This is said by somebody and we are going to use this information. Okay. Okay. So that's good. Okay. So this columns are sorted. Okay. These are the only features or we have more.
+
+36:15 - Mrudul Jadhav
+These are the only features.
+
+36:17 - Unidentified Speaker
+Fine.
+
+36:17 - Pramod Kachare
+Okay. Now let's go to the next check. There will be more uh yeah okay fine okay now this is um this was for the metadata okay so all the data sets that you are going to select I'm talking about only open data sets now when I say you are selecting means I'm talking about only data set which are open and you are available they are available to you so all the data sets have these uh columns or attributes no like uh this day like this table was made from like the data set table which we made earlier which we saw earlier okay it describes that okay I think then we can skip this rather than this later on we will describe each data set along with these features in the same format of course but do not have to give the Okay, sure sir.
+
+37:23 - Mrudul Jadhav
+Okay.
+
+37:25 - Mrudul Jadhav
+Yeah, we can do the next.
+
+37:30 - Pramod Kachare
+So it is one of the same thing, right? So you can skip this also. Yeah.
+
+37:35 - Mrudul Jadhav
+And that the, so I was saying about the telephone audio and high resolution clinical audio for the data mixing, that was, that is one main issue in all the different data sets. Okay.
+
+37:54 - Pramod Kachare
+And this is a rough methodology.
+
+37:57 - Mrudul Jadhav
+We would also like your thoughts on the preprocessing part at least. Right.
+
+38:04 - Pramod Kachare
+Okay. Is there a reason why you're selecting 16?
+
+38:11 - Mrudul Jadhav
+Nothing in particular. But it was Like in one such paper, I think it was specified like in that specific, uh, I wouldn't say I could say vocal range. I think like those samples, uh, such characteristics were found. Okay.
+
+38:33 - Pramod Kachare
+Because if you, um, can convert these to eight kilowatts, then combining with the telephoning data is better. I mean, it will be easier. Yeah. You can take the 8 kilohertz, pass it through IRS channel and you will get your, what do you call it, telemonitoring data.
+
+38:57 - Pramod Kachare
+Okay.
+
+39:00 - Pramod Kachare
+So check what is the frequency that people are using. There might be some people trying to use different frequency or features at different frequency and trying to do some kind of We may get a hint from them. Otherwise, I would suggest a frequency around 8kHz or 10kHz. 10kHz would have been a better choice, but I could see that some of the datasets are at 8kHz. So, uplifting them to 10kHz does not make sense. So, we can keep everything at 8kHz. Just confirm the point.
+
+39:46 - Pramod Kachare
+Which VAD you will use? There are many VADs available. And why VAD actually? Yeah, that one point we weren't sure about.
+
+39:57 - Mrudul Jadhav
+we wanted to ask you on this on these points It's like a rough blueprint on the methodology. So we would like your thoughts on this. No, that's okay.
+
+40:13 - Pramod Kachare
+What I mean is you want my thought on which VAD or you want my thought on whether to use VAD?
+
+40:21 - Achyut Maheshka
+We want thought on the complete methodology. Exactly.
+
+40:25 - Mrudul Jadhav
+It's just a rough structure.
+
+40:30 - Unidentified Speaker
+Okay.
+
+40:30 - Pramod Kachare
+That's okay. I think BAD we are not supposed to. Sandeep, you did try, right?
+
+40:36 - Dr. Sandeep Sangle
+I think Pramod, as we did in literature review of the dementia, with the voice activity, speech is also the, the pause or silence is also the part of the features, okay, is the important part. Similarly, I think in Parkinson also, the pause or silence part is also the important thing. So I think to consider silence part. So the voice activity may not required or may not helpful for us. What you say? I think yeah, right.
+
+41:13 - Pramod Kachare
+Like one of the features for or what do you call traditional features for people with Parkinson's this timer, they take longer time to speak. So longer pauses are there for them to think about something. So these could be one of the features. So we should not use VAD to remove the noises or pauses. If you are using VAD for calculating the pause duration and then doing some analysis on that, then it's a different story altogether. Then you are actually doing feature extraction, not the pre-processing part.
+
+41:49 - Pramod Kachare
+Okay.
+
+41:50 - Mrudul Jadhav
+Rudra, you want to jump over point? Yeah, so I understood that.
+
+41:55 - Pramod Kachare
+Yeah, so use VAD, but as a feature extractor, not as a preprocessor. Okay.
+
+42:03 - Pramod Kachare
+Okay. That being said, then I think you need to normalize all the input samples.
+
+42:15 - Pramod Kachare
+Yeah.
+
+42:16 - Mrudul Jadhav
+Uh, like you said, uh, two eight kilohertz. That's one.
+
+42:21 - Pramod Kachare
+But you also need to normalize the intensity.
+
+42:25 - Mrudul Jadhav
+Everybody should be at the same level.
+
+42:27 - Pramod Kachare
+Otherwise, somebody may just shout or somebody may be very low. Chances of having very low amplitude is very highly likely. Yeah. Okay. So normalize the RMS to a fixed value. There are different methods for RMS normalization. You can Normalize the RMS based on Activity detection of course But that is a standard algorithm. I think Sandeep will be having the code you can better and then there is a direct RMS normalization like overall RMS normalization, and then there is an option for SPDBL Normalization different options different works use anyone that is easily available. It doesn't really make one can be easily converted to another. There's a scaling difference.
+
+43:26 - Pramod Kachare
+Okay.
+
+43:27 - Mrudul Jadhav
+Yeah.
+
+43:32 - Dr. Sandeep Sangle
+I think you have it now. Active speech detection in that there is a RMS value we calculated and that RMS value you can use it for the normalization.
+
+43:45 - Mrudul Jadhav
+Yes.
+
+43:47 - Dr. Sandeep Sangle
+Same thing you can use it here. Okay.
+
+43:53 - Pramod Kachare
+Yeah, I think that's the right one. Okay. Feature automated feature extraction.
+
+44:04 - Pramod Kachare
+When you go to features, you want to extract MSCC perturbations. Why parcel I think it was just a library suggested so we don't have much information and that's fine okay okay that's okay so you can use that that's not a problem but I would suggest go for Librosa because one library can give you, I mean it gives access to everything. So use that. Because Reprosa I think uses root pole analysis for formal calculations. So there are, of course it is not exact values, but you don't need exact value anyhow. You just need some or the other indication.
+
+45:04 - Pramod Kachare
+So that's one. You need to decide on on what features you are going to extract, how many features you are going to extract and you need to group them. So you have that table, from that table look at the features, how many of those you are going to already extract and then you go ahead. I will send you one more paper that has a list of data sets and list of features which people have already tried.
+
+45:33 - Pramod Kachare
+It's a literature you so you can just look at those for us also okay then linguistic this is whisper you to have to use only if you are going to do something on the recognized text otherwise you don't need whisper for this you can use the available speech data itself we are not I don't recommend whisper reason being then if you convert that to text then it becomes language specific yeah so I don't want to get into language specific model right now foundation model architecture right okay step three four is okay next so that's it okay okay fine okay then now need need just note down the studies that we have So, first study that we have to do as Sandeep was saying is, we need to study the differences in language. So, first you need to categorize the datasets based on language. So, all the English, French, this, all that languages will be grouped together, I mean datasets will be grouped together. Since the preprocessing and the feature extraction is common now, we should be able to do that. Once you have the group, ready, then make a model for English, make model for French, make model for each one of those. That's one language specific model. Keep that ready. Second, now you need to make gender specific models. So all the people with male and female genders, they'll be separated out irrespective of their language that they're speaking and irrespective of the type of speech they are having. Whether it is vowel or anything. Okay. So that second model, then need to make one more model based on speech categorization now. So all the vowels, one model, all sentences, another model, all repeated vowels, another model. Okay. And if you have numbers, then numbers will be another model.
+
+47:53 - Pramod Kachare
+Okay.
+
+47:57 - Pramod Kachare
+Now, once these studies are done, then you need to think about what is the feature that is most significant to what kind of classification. One of the thought which I have is, if it is sustained vowels, then whether you do this VAD or don't do VAD, like pause is not the that people require it whereas pause is supposed to be one of the important feature when it is multi-word like repeated vowels or if it is a sentence.
+
+48:36 - Pramod Kachare
+So these things will be clear when you make individual models then you will be also able to answer upon whether male female gender wise there is any difference in the models. Once all these things are done then you need to go go for your foundation model. A foundation model, you can make one foundation model by extracting handcrafted features, like all the features that you already have, extract those features and then pass it on to a model that we're going to call it as a foundation model one. Second model, you can make it as take the original raw speech data and transform it using like MEL spectrogram or STFT or this chromogram or any one of those things. And then use that data as input to a CNN.
+
+49:30 - Unidentified Speaker
+Okay.
+
+49:32 - Pramod Kachare
+So it could be CNN or a transformer that you can take a call after phase one or foundation model one.
+
+49:40 - Pramod Kachare
+So if it is CNN, then you have to do the framing and all those other things. If it is transformer, transformer allows you to take the whole data as input.
+
+49:52 - Pramod Kachare
+So use any one of those, but that you will know only after you're doing the first step. So that's one.
+
+50:04 - Pramod Kachare
+Is Parkinson, MSA and PSP are what?
+
+50:08 - Mrudul Jadhav
+They were similar, like similar diseases, which have like the similar symptoms, different diseases. Okay. Okay.
+
+50:20 - Pramod Kachare
+Right now you should go for only a binary model, healthy versus non-healthy. Okay. Once that is done, then we can do a simple approach for multistage. Achyut will have the entire details and the kind of code you need to write it's a I think all three of them will have okay you can they can explain to you after this meeting what do you mean by multi-stage model how do you develop that okay so that we can take easily once we have the binary model ready okay sure sure okay I think that's all from my side now you go ahead and me if anything that I missed or anything that you want to know from me or Sandeep.
+
+51:13 - Achyut Maheshka
+So for now we should start collecting the data and the data sets for that. Yes. And then we should go with the pre-processing stage. Yes.
+
+51:22 - Pramod Kachare
+So if we have any doubt what's about the dataset part we could later ask you as well yeah that's anyway there like whatsapp group you should be able to use whatsapp group right lately the whatsapp group is only being used for scheduling things so there won't be any more delays that's okay delays happen I'm just saying that there should be a good going on okay so delay is not a problem I mean it will happen from your side my end many things okay so I want you to finish it as fast as possible okay I am I will not be in Read after I think second or third week third week I guess so before that April or May?
+
+52:21 - Pramod Kachare
+So I will be going after your exams. Uh, so before that you try to finish as much as possible because I, if I'm not here, I will not be in sync with Sandeep also, and not in sync with me also, at least now me and Sandeep are in sync. So we know exactly what to do and all the delays will be more once, uh, this thing, uh, synchronization breaks. So get it done faster. And the thing is, your mock is OK. I mean, this will mark as mock one. I don't know. Do we have mock two, Sandeep? Yes, yes. We have mock two.
+
+53:01 - Mrudul Jadhav
+Yeah, there is a mock two.
+
+53:04 - Dr. Sandeep Sangle
+March think. No, so 4th of April.
+
+53:09 - Achyut Maheshka
+No, no.
+
+53:09 - Dr. Sandeep Sangle
+4th of April, correct.
+
+53:13 - Dr. Sandeep Sangle
+4th of April. 4th of April. And your final exam in? Second of May. Second of May, OK.
+
+53:21 - Achyut Maheshka
+Yes. OK, sir.
+
+53:23 - Mrudul Jadhav
+OK, so I'm not there for your final exams.
+
+53:25 - Pramod Kachare
+So that is done. So Sandeep will be there. OK, fine.
+
+53:31 - Pramod Kachare
+OK. OK, I'll take care of those.
+
+53:33 - Dr. Sandeep Sangle
+Niharika and Ruchit, I shifted both of you in project, correct?
+
+53:39 - Niharika Mishra
+So I was about to ask you about that. So what was the situation in college today, like sir was saying there was some kind of situation with HOD ma'am and someone was there to ask for permission, right? Yes.
+
+53:54 - Dr. Sandeep Sangle
+And she didn't allow it.
+
+53:55 - Niharika Mishra
+Yes. So should we bother going to ma'am and ask for it or we should just leave it like that?
+
+54:06 - Dr. Sandeep Sangle
+You communicate with ma'am about Mach 1.
+
+54:10 - Unidentified Speaker
+OK.
+
+54:10 - Niharika Mishra
+And about the internship, we should not say anything about the internship. Right? Yeah. Okay sir, I'll let her know that. My question is that are you communicated with ma'am? Yes sir, I did inform her about the situation on the day of mock one. At that time what ma'am said? At that time she said that take a week, mock one is fine, take a week or two and sort out things. So after that I didn't keep her in the loop. Yeah. That is the last on the first week after mock one. I did have a talk that this is the situation. Okay.
+
+54:54 - Dr. Sandeep Sangle
+So means before of the second May, are you going to you both are going to complete it three months of the entire.
+
+55:02 - Niharika Mishra
+No, sir. No. And ma'am is not allowed you.
+
+55:05 - Dr. Sandeep Sangle
+Okay. Okay.
+
+55:08 - Niharika Mishra
+Then should we let her know or there should be keep that there and start with the project itself. And you will show it.
+
+55:14 - Dr. Sandeep Sangle
+And your wish, if you have to inform to ma'am about your internship, just ask about whether is it possible if my three months is not completed, but I'm continuing with that, is it possible? Or I have to shift? Can I shift then at that situation? Or in a project with the groups, then I will go and today just one case. I think one student come to me and asking me to shift me from internship to project to the internship. So and ma'am is not allowed because and that's not given a mock one also. OK. OK. So in your case, if you give a mock one and right now, you have a offer letter and how many months you completed till 2nd of May?
+
+56:12 - Niharika Mishra
+So we will be starting from 16th of March so definitely it won't be 3 months. Okay.
+
+56:21 - Dr. Sandeep Sangle
+If possible come tomorrow meet a ma'am. Sure sir. What she suggest we will decide at that time then. Okay sure sir. But I think and ma'am, not allowed.
+
+56:35 - Unidentified Speaker
+Okay.
+
+56:41 - Dr. Sandeep Sangle
+So, just when you come tomorrow, please meet me also. Yes, sir.
+
+56:48 - Niharika Mishra
+Sure. Sure. Okay.
+
+56:50 - Dr. Sandeep Sangle
+And try to come morning session or possible if you have. Okay, sir.
+
+56:56 - Niharika Mishra
+I'll be there in first half.
+
+56:58 - Unidentified Speaker
+Okay.
+
+56:58 - Dr. Sandeep Sangle
+Okay.
+
+57:00 - Niharika Mishra
+Do you have your final internship offer?
+
+57:04 - Pramod Kachare
+Not yet, sadly.
+
+57:07 - Niharika Mishra
+Then what is the point in coming tomorrow? Sir, he has said that he will get it today. I am not delaying it any further. If he doesn't get it, then I will do it like this.
+
+57:19 - Dr. Sandeep Sangle
+You will get it today, but still you don't have it yet. I haven't got it yet.
+
+57:24 - Niharika Mishra
+If I get it, then I will go to college in the first half.
+
+57:30 - Niharika Mishra
+I'll inform you Justin.
+
+57:32 - Unidentified Speaker
+Okay.
+
+57:33 - Pramod Kachare
+Yes.
+
+57:38 - Pramod Kachare
+Okay, I think so you're noted everything right?
+
+57:43 - Dr. Sandeep Sangle
+Okay.
+
+57:45 - Achyut Maheshka
+Whenever you say so this week even works. Like, if you are required to complete whatever the task given from the data and pre-processing, I guess three days would be good enough. Okay. Hopefully.
+
+58:03 - Dr. Sandeep Sangle
+And then next Monday is okay, Mrudul?
+
+58:09 - Dr. Sandeep Sangle
+Yeah, sure, sure.
+
+58:11 - Mrudul Jadhav
+Okay. Saturday is also fine this week. Okay, then we will... How about Friday?
+
+58:17 - Pramod Kachare
+Ah, Friday.
+
+58:17 - Dr. Sandeep Sangle
+Work, sir.
+
+58:18 - Achyut Maheshka
+Yeah, it would work, sir.
+
+58:21 - Mrudul Jadhav
+Okay, good.
+
+58:22 - Pramod Kachare
+You may not be able to complete all of them, but at least can have a quick review, any difficulties or any changes in thoughts. Okay. I mean, any changes in my thought, which is very common, but let's see.
+
+58:35 - Unidentified Speaker
+Okay.
+
+58:39 - Achyut Maheshka
+And so do we need to make any changes on the MHA paper? Yes.
+
+58:44 - Niharika Mishra
+No, not yet.
+
+58:46 - Pramod Kachare
+I just read the MHA paper, but there are many things that I would like to add in that paper. Okay. That I will what I can do is not maybe not tomorrow but on Wednesday I can give you pointers on what to add. Okay.
+
+59:03 - Achyut Maheshka
+And so there was an updates on the code even which I informed you.
+
+59:08 - Pramod Kachare
+Yeah, yeah, I'm yet to check that. Okay, so I was not available for a few days.
+
+59:14 - Pramod Kachare
+I'll check those things. You're talking about the library, right? Yes. Yes.
+
+59:21 - Achyut Maheshka
+updated the code base on the GitHub as well as the library. Yeah, that's OK.
+
+59:29 - Pramod Kachare
+Since we have the library, we are actually online. So whichever delay we do in the paper, it is not a problem because our entire code and everything is only in the public domain. Yeah.
+
+59:42 - Niharika Mishra
+Okay. So that should not be a problem.
+
+59:46 - Pramod Kachare
+Hmm. Okay. So that is one. Uh, then I think one thing which I was telling you about is skin cancer, right?
+
+59:55 - Achyut Maheshka
+Is this the same group for skin cancer?
+
+59:58 - Pramod Kachare
+Okay.
+
+1:00:01 - Unidentified Speaker
+Okay.
+
+1:00:02 - Pramod Kachare
+That is why probably I was Yeah.
+
+1:00:07 - Niharika Mishra
+Fine. Okay. Is the same team.
+
+1:00:10 - Pramod Kachare
+Okay. I get it. Yes. Is the same.
+
+1:00:13 - Niharika Mishra
+Got it. I'm about to start.
+
+1:00:16 - Pramod Kachare
+So as soon as there is an update on the MHA, I'll send you that. Now what, okay, that is fun. What is your thought on this project? Are you going to do something on this? Because by the time you finish also, I will not be here. Publishing, I'm definitely not here.
+
+1:00:37 - Pramod Kachare
+So you have to be in touch with Sandeep. Yeah.
+
+1:00:44 - Achyut Maheshka
+I mean, I will be there.
+
+1:00:46 - Pramod Kachare
+It's not like you can't contact me, but I won't be able to do many things since I'm out of Read. Yeah.
+
+1:00:54 - Unidentified Speaker
+Okay.
+
+1:00:56 - Achyut Maheshka
+So just get it done.
+
+1:00:57 - Pramod Kachare
+If you are thinking about filing a patent, like in skin cancer or writing a paper, just keep in touch with Sandeep. So that before you complete, or at least after you complete, before you get your results, this thing also should go online. My plan is before you get your degree, all of these things should go online. Yes.
+
+1:01:21 - Achyut Maheshka
+How about the MHA papers?
+
+1:01:24 - Niharika Mishra
+And if you won't be in Read, then what about the MHA papers? You can schedule meeting with sir at free time. It's like that. I will be working.
+
+1:01:39 - Pramod Kachare
+Working is not the problem. I mean many things which I can do in R A I T I can't do from outside. For that you have to connect to Sandeep. That's what I'm saying. Okay.
+
+1:01:55 - Dr. Sandeep Sangle
+Yes, sir. All good, sir.
+
+1:02:00 - Achyut Maheshka
+Doing well. Recovering. Okay, good.
+
+1:02:05 - Dr. Sandeep Sangle
+16th March is the last date for the exam form. Exam form. Yes, sir.
+
+1:02:10 - Achyut Maheshka
+Yes, sir.
+
+1:02:11 - Dr. Sandeep Sangle
+Okay. Yes, you have an exam, no?
+
+1:02:13 - Niharika Mishra
+Internship and project. Yeah.
+
+1:02:28 - Niharika Mishra
+And so paper, is that mandatory in this semester as well? What paper? Where it was mandatory? Did you do in the last semester? We are doing it.
+
+1:02:37 - Pramod Kachare
+So exactly my point, it's entirely who is your supervisor, how they take it.
+
+1:02:56 - Achyut Maheshka
+I don't need a quantity, I need a quality.
+
+1:02:59 - Pramod Kachare
+So even if it takes more than one semester, I am okay with it.
+
+1:03:05 - Achyut Maheshka
+Then we can do the same thing for the report.
+
+1:03:10 - Pramod Kachare
+As I said, report is the least of my concerns. My concern is always writing the paper and making the PPT well.
+
+1:03:19 - Pramod Kachare
+Okay, so concentrate on what is going to be delivered, what is not to be delivered, that's okay. But I would suggest, just my thought, that you should make the report for this semester very well. The reason being, this is one of the milestones that you will have. Okay. So everywhere people are going to ask you what you did as your final project.
+
+1:03:43 - Achyut Maheshka
+Can't we put LNG over there?
+
+1:03:44 - Pramod Kachare
+Five, six years, I mean. Okay. What you put is up to you, but people do ask until and unless you spend 5-6 years in the industry and you have done many other projects, people do ask what you do or what you did as your final year project. So make the report as good as you should not be ashamed of putting the report online in public.
+
+1:04:15 - Achyut Maheshka
+putting the MHA project in the final semester.
+
+1:04:18 - Pramod Kachare
+That's your thought, as I said.
+
+1:04:20 - Niharika Mishra
+So he asked that because MHA is quite well received in the interviews. Yes, I know that. Yeah, we did put that. That's okay.
+
+1:04:38 - Pramod Kachare
+If you think MHA is your best paper, and you want to put that go ahead so you don't have to worry about the report because we will be filing the journal paper so you can put journal paper in public domain I mean it will automatically go to public domain yeah that can be done very well okay but over journal paper you have to write well I mean I don't know do three of you, you, Ruchit, Niharika, or even Mrudul.

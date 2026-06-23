@@ -1,0 +1,25 @@
+# Speech-Based Parkinson's Disease Detection — Python dependencies
+# Python 3.13 (Windows)
+# Install: pip install -r requirements.txt
+
+# ── Audio processing ──────────────────────────────────────────────────────────
+librosa==0.11.0
+soundfile==0.13.1
+opensmile==2.6.0
+
+# ── ML / modelling ────────────────────────────────────────────────────────────
+scikit-learn==1.8.0
+xgboost==3.2.0
+joblib==1.5.3
+
+# ── Numerical / data ──────────────────────────────────────────────────────────
+numpy==2.4.4
+pandas==2.3.3
+scipy==1.17.1
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# ── Reporting ─────────────────────────────────────────────────────────────────
+xlsxwriter==3.2.9

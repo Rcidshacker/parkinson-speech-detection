@@ -1,0 +1,146 @@
+Project Catch Up!
+Mon, Mar 9, 2026
+
+Summary:
+
+The meeting reviewed project status, administrative items, and technical plans for building speech-based models to detect Parkinson’s disease. It began with brief questions about automated meeting transcription tools and an update on internship offers and departmental restrictions; the group confirmed four members per project and noted students should resolve internship approvals with faculty and meet with Dr. Sandeep as needed.
+
+A student presented a proposal for a speech-based foundation model aiming for cross-language robustness, early detection, differential diagnosis (Parkinson’s versus MSA/PSP), and sex-aware analysis, supported by an inventory of roughly 10+ datasets totaling about 12,000 recordings across many languages. Method discussions covered harmonization (resampling to 16 kHz, with some downsampling to 8 kHz where needed), voice activity detection treated as a feature extractor, acoustic and linguistic features (MFCCs, jitter/shimmer, Whisper transcripts), encoder choices (CNN/transformer), and leave-one-language-out evaluation. Faculty raised concerns about dataset access (open/private/restricted, raw wave availability), sampling-rate variability, gender-ratio normalization, and precise citations for domain-specific features.
+
+The group agreed on dataset classification (open, private, restricted), to produce a reformatted dataset table separating raw-audio from feature-only datasets, and assigned responsibilities for obtaining restricted datasets and merging local entries; Pramod outlined a staged modeling strategy including category-specific models and two foundation model approaches, and scheduling items for mock exams and exams were confirmed.
+
+
+Chapters & Topics:
+
+Opening and meeting tools
+The meeting began with greetings and questions about participant attendance and automated meeting-capture tools, including fireflies.ai, Read.AI, and Gemini, and how to add them to the meeting to produce transcripts and summaries. Attendees confirmed these tools perform speech-to-text and speaker diarization and that one participant had previously installed an auto-add feature.
+* The team will use automated meeting capture tools to generate summaries and transcripts for sharing.
+
+Attendance, presenters, and group logistics
+Presenters were introduced and asked to share screens, and faculty checked student availability for internships and project continuity. Niharika described her communication with the HOD and pending internship documentation; Dr. Sandeep and Pramod clarified departmental rules on internships and confirmed that groups of four members are acceptable.
+* Niharika has not received a confirmed Yes Bank internship offer and may seek departmental approval for Vantage Point if an offer arrives.
+* Project groups may contain four members; more than four is not permitted by the department.
+
+Project overview — Parkinson's speech model goals
+Mrudul presented the project objective to develop a speech-based foundation model for Parkinson’s disease with cross-language robustness, differentiation from related disorders (MSA/PSP), early prediction, and sex-aware analysis, motivated by speech changes preceding motor symptoms. The literature review noted most prior work is single-language or small cohorts.
+* The proposed project aims to build a cross-language speech foundation model to detect Parkinson’s and distinguish similar disorders while supporting early and sex-aware analysis.
+
+Dataset inventory and challenges
+The team reviewed an inventory of datasets and metadata, noting roughly 10+ datasets and about 12,000 recordings spanning languages such as English, Spanish, Mandarin, Hindi, and Arabic. Challenges identified include varying sampling rates (8 kHz telephone vs high-resolution clinical audio), differing acquisition methods, metadata heterogeneity (medication status, UPDRS, MOCA), class imbalance, and limited early-detection labels.
+* Several datasets exist (~10 datasets, ~12,000 recordings) but availability of original wave files and access restrictions (UCI, IEEE) must be verified.
+
+Proposed methodology and model architecture
+The group proposed a methodology of data acquisition and preprocessing (unify/resample to 16 kHz), voice-activity detection, automated acoustic feature extraction (MFCCs, jitter/shimmer, formants), multilingual transcription via Whisper for linguistic features, encoder training using CNN/Transformer architectures, and multi-class classification with leave-one-language-out cross-validation. Faculty asked for methodological clarifications and validation criteria.
+* The proposed pipeline includes resampling to 16 kHz, voice-activity detection, acoustic and linguistic feature extraction, encoder training, and leave-one-language-out validation.
+
+Data verification, normalization, and presentation edits
+Faculty provided detailed feedback on slide titles and wording (avoid "development," clarify "early detection" timeframe), requested normalization of gender ratios, verification of dataset availability and raw wave file access (UCI and IEEE may require login/payment), confirmation of sampling frequencies and acquisition methods, and language denotations (EN, CZ, IT, SP, GE). Students were instructed to record these action points.
+
+Dataset access and classification discussion
+Participants discussed whether datasets were restricted and how access is obtained, confirming that some datasets require organizational permission. The group agreed to classify datasets by access type and noted many datasets lack speech audio.
+
+Table reform and literature-slide proposal
+Pramod proposed a two-row slide/table (features-only vs raw audio) and a subsequent slide focused on open datasets; he advised grouping restricted, private, and open datasets and adding counts to justify dataset selection.
+* The team will present a two-row table separating datasets that provide only features from those that provide raw audio, and then classify audio-providing datasets as restricted, private, or open.
+* A dedicated slide will follow to discuss only open datasets in detail.
+
+Collecting and tracking restricted datasets
+The team decided to collect restricted dataset contacts and send email requests; Pramod volunteered to send emails and track responses, reporting some replies already received.
+* Pramod offered to handle emailing authors for restricted datasets and to track responses.
+
+Missing datasets and consolidating local sheets
+The group identified PC Gita as missing from the current listing and agreed local sheets may contain additional datasets; Achyut noted he has local files that should be merged into the main table.
+* The PC Gita dataset is currently missing from the compiled listing and must be added from local sheets.
+
+Table formatting, counts, and feature-attribution
+Pramod instructed adding dataset counts (features-only, audio, private, restricted, open) and advised showing how many literature sources use each dataset and each feature to build credibility; category ordering and citation inclusion for features were recommended.
+* Dataset counts and rationale will be added to demonstrate breadth of search and justify final dataset choices.
+* The group agreed to finalize dataset selection before finalizing feature selection.
+
+Metadata, dataset finalization, and preprocessing choices
+The team agreed to finalize datasets before choosing features and discussed metadata fields for selected open datasets; telephone vs clinical audio mixing was raised as a major issue and a recommended sample rate standard of 8 kHz was discussed to ease mixing.
+* The team should standardize sample rate to 8 kHz (or 10 kHz if feasible) to support mixing telephone and clinical audio.
+
+VAD, normalization, and feature-extraction tooling
+The group recommended treating VAD as a feature extractor to capture pauses rather than removing silence, performing RMS/intensity normalization using active-speech RMS values, and using Librosa for broad feature extraction while acknowledging alternative libraries (e.g., Praat/Reprosody) provide different internal calculations.
+* Voice activity detection should be used as a feature extractor (to capture pauses) and not to remove silence in preprocessing.
+* All audio samples should receive RMS-level normalization to equalize intensity across recordings.
+* Librosa was recommended as the primary feature-extraction library for reproducibility and breadth of functions.
+
+Feature selection and experimental plan
+Pramod emphasized selecting which features to extract, deciding feature counts, and grouping features from an existing table as the first step for the project. He offered to send a literature paper listing datasets and previously tried features to guide the team.
+* The team must decide which features to extract, how many, and how to group them before proceeding.
+
+Dataset categorization and model breakdown
+The team agreed to categorize datasets by language and build language-specific models, then create gender-specific models independent of language, and finally create models based on speech types (vowels, sentences, repeated vowels, numbers) to study which features matter for each classification.
+* Pramod will send a literature paper listing datasets and features to guide feature selection.
+* Datasets should be categorized by language and then modeled separately for each language.
+* Separate models should be built for gender-specific data regardless of language or speech type.
+* Additional models should be developed by speech categorization (vowels, sentences, repeated vowels, numbers).
+
+Foundation models and modeling choices
+After initial experiments, two foundation-model strategies were proposed: (1) a model trained on handcrafted features and (2) a model using raw speech transformed to MEL spectrograms/STFT/chromograms fed to CNNs or transformers, with the architecture choice deferred until phase one results are available.
+* Two foundation-model approaches are planned: (a) handcrafted features into a model and (b) raw speech transformed to spectrograms fed to CNN/transformer.
+
+Baseline labeling and disease categorization guidance
+A clarification was provided that Parkinson, MSA, and PSP are distinct but similar diseases, and the team should start with a binary healthy vs. non-healthy model before moving to multi-stage disease classification.
+* Start with a binary classification (healthy vs. non-healthy) before attempting multi-stage classification.
+
+Immediate tasks, timelines, and availability
+Achyut confirmed dataset collection and preprocessing will start immediately and suggested a three-day target for initial tasks; Pramod urged the team to finish as much as possible before he becomes unavailable around mid/late April and noted synchronization with Sandeep is important.
+* Achyut and the team will begin collecting datasets and perform preprocessing immediately.
+
+Scheduling, internships, and approvals
+The group confirmed mock two is on 4th April and final exams on 2nd May, discussed students' internship approval and shifting between internship and project, and advised students (Niharika and Ruchit) to meet faculty and Dr. Sandeep to resolve internship and mock scheduling issues.
+* Mock two is scheduled for 4th April and final exams are on 2nd May, affecting availability and deadlines.
+
+Paper, codebase, and publication guidance
+Pramod requested improvements to the MHA paper and offered to provide pointers on Wednesday; Achyut noted code and library updates were pushed to GitHub and Pramod agreed to review the changes; Pramod encouraged publishing, patent consideration, and producing a high-quality report suitable for public sharing.
+* Pramod will provide pointers to improve the MHA paper by Wednesday.
+
+
+Action Items:
+
+* Niharika Mishra will meet with Chodi ma'am to seek approval for the Vantage Point internship and submit any required original internship documentation.
+* The presenters will standardize audio preprocessing parameters, including target sampling rate (confirm whether to use 16 kHz or another standard), and report the chosen standard.
+* Mrudul Jadhav will revise the project title and slides to clarify "early detection" timeframe and include variability considerations as requested by Pramod.
+* Dr. Sandeep Sangle, Achyut Maheshka, and Mrudul Jadhav will identify which datasets can be combined based on matching acquisition methods and common voice recordings/vowels.
+* Achyut Maheshka and Mrudul Jadhav will verify and normalize gender-ratio figures across datasets and update the slide table accordingly.
+* The team will check whether medication "on/off" labels and clinical scores (UPDRS/MOCA) exist in each dataset and document their availability and significance for analysis.
+* Achyut Maheshka will verify availability and downloadability of the listed open-source datasets, confirming whether raw waveform (.wav) files are provided.
+* Achyut Maheshka will check access requirements for the IEEE / DataCite dataset and report whether login/payment is required.
+* Pramod Kachare will confirm and, if needed, obtain access to datasets that require login or special access (e.g., IEEE).
+* Achyut Maheshka will check dataset language codes and confirm the exact languages for each dataset (e.g., CZ, IT, SP, GE) and note a common denomination.
+* Mrudul Jadhav will reform the dataset table into two rows (features-only and raw audio) and group datasets by restricted, private, and open, adding counts where possible
+* Pramod Kachare will collect citations and send email requests for restricted datasets and track responses
+* Achyut Maheshka will add missing datasets from his local sheets, including PC Gita, into the main listing
+* Mrudul Jadhav will add a citation for the stated "PD signature" claim in the slides/report
+* Mrudul Jadhav will convert selected audio to 8 kHz where appropriate to facilitate mixing telephone and clinical recordings
+* Mrudul Jadhav will apply RMS/intensity normalization to all input samples using an agreed RMS-normalization method
+* Pramod Kachare will send the team a literature paper that lists datasets and features used in prior work
+* Achyut Maheshka will start collecting datasets and begin preprocessing the data
+* Niharika Mishra will meet with the college ma'am and then meet Dr. Sandeep to discuss internship approval and mock exam arrangements
+* Team members will complete the data and preprocessing tasks within the coming days and prepare for a quick review (target: three days for initial tasks)
+* Pramod Kachare will provide pointers to improve the MHA paper on Wednesday
+* Pramod Kachare will review the updated codebase and library on GitHub
+
+
+Key Questions:
+
+* Is Sandeep joining the meeting?
+* What are fireflies.ai and Read.AI and are they useful for meetings?
+* Will the meeting capture include speaker diarization and speech-to-text conversion?
+* Are four members allowed in one project group?
+* Does any dataset contain explicit early-detection class labels to categorize early-stage Parkinson’s?
+* Are the listed datasets actually downloadable with original wave files (e.g., UCI, IEEE)?
+* Should the team discuss dataset details now or after finalizing selections?
+* Is there a specific reason for selecting 16 kHz as the working sample rate?
+* Which VAD should be used and should VAD be applied in preprocessing?
+* Are Parkinson, MSA, and PSP the same or related conditions?
+* Should we tell the HOD about the internship or leave it?
+* Do you have the final internship offer yet?
+
+
+Notepad:
+
+* No notes

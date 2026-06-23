@@ -1,0 +1,4 @@
+{
+  "structural_cmvn": ["mfcc_sma[1]_", "mfcc_sma[2]_", "mfcc_sma[3]_", "mfcc_sma[4]_", "mfcc_sma[5]_", "mfcc_sma[6]_", "mfcc_sma[7]_", "mfcc_sma[8]_", "mfcc_sma[9]_", "mfcc_sma[10]_", "mfcc_sma[11]_", "mfcc_sma[12]_"],
+  "temporal_cmvn": ["pcm_zcr_sma_"]
+}

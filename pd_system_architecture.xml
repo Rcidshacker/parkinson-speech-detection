@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 1: DATA ACQUISITION                                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 1 outer block -->
+    <mxCell id="10" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="60" width="1490" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="11" value="01" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="95" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="12" value="Data Acquisition" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#1e4d78;" vertex="1" parent="1">
+      <mxGeometry x="148" y="95" width="170" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Dataset sub-boxes -->
+    <mxCell id="13" value="&lt;b&gt;PC-GITA&lt;/b&gt;&lt;br&gt;Spanish PD corpus" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="78" width="155" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="14" value="&lt;b&gt;Voice DS&lt;/b&gt;&lt;br&gt;Parkinson's voice data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="515" y="78" width="155" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="15" value="&lt;b&gt;NeuroVoz&lt;/b&gt;&lt;br&gt;Spanish neuro speech" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="690" y="78" width="155" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="16" value="&lt;b&gt;mPower&lt;/b&gt;&lt;br&gt;Mobile health study" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="865" y="78" width="155" height="74" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="17" value="Output: Unified WAV files" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#1e4d78;" vertex="1" parent="1">
+      <mxGeometry x="1060" y="95" width="200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 1 to Phase 2 -->
+    <mxCell id="arrow1" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#6c8ebf;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="20">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 2: PREPROCESSING                                      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 2 outer block -->
+    <mxCell id="20" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="230" width="1490" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="21" value="02" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="265" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="22" value="Preprocessing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#2d6a4f;" vertex="1" parent="1">
+      <mxGeometry x="148" y="265" width="170" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Step sub-boxes with inner arrows -->
+    <mxCell id="23" value="&lt;b&gt;Mono Conversion&lt;/b&gt;&lt;br&gt;Stereo → single channel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="248" width="180" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="24" value="&lt;b&gt;Resampling&lt;/b&gt;&lt;br&gt;8k / 10k / 16k Hz&lt;br&gt;via librosa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="590" y="248" width="180" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="25" value="&lt;b&gt;RMS Normalisation&lt;/b&gt;&lt;br&gt;Target RMS = 0.04&lt;br&gt;Peak cap = 0.99" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="840" y="248" width="180" height="74" as="geometry" />
+    </mxCell>
+
+    <!-- Inner arrows between preprocessing steps -->
+    <mxCell id="inarrow1" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="24">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="inarrow2" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="24" target="25">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="26" value="Output: Clean mono audio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#2d6a4f;" vertex="1" parent="1">
+      <mxGeometry x="1060" y="265" width="200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 2 to Phase 3 -->
+    <mxCell id="arrow2" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="20" target="30">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 3: FEATURE EXTRACTION                                 -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 3 outer block -->
+    <mxCell id="30" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="400" width="1490" height="120" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="31" value="03" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="440" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="32" value="Feature Extraction" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#7d5a00;" vertex="1" parent="1">
+      <mxGeometry x="148" y="440" width="170" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Feature set sub-boxes -->
+    <mxCell id="33" value="&lt;b&gt;Handcrafted&lt;/b&gt;&lt;br&gt;113 dimensions&lt;br&gt;Pitch, spectral, formants..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="415" width="190" height="86" as="geometry" />
+    </mxCell>
+    <mxCell id="34" value="&lt;b&gt;eGeMAPS&lt;/b&gt;&lt;br&gt;88 dimensions&lt;br&gt;via opensmile library" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="560" y="415" width="190" height="86" as="geometry" />
+    </mxCell>
+    <mxCell id="35" value="&lt;b&gt;ComParE 2016&lt;/b&gt;&lt;br&gt;6,373 dimensions&lt;br&gt;High-dim. baseline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="780" y="415" width="190" height="86" as="geometry" />
+    </mxCell>
+    <mxCell id="36" value="&lt;b&gt;7 Configurations&lt;/b&gt;&lt;br&gt;Individual + pairwise&lt;br&gt;+ all combined" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6a0;strokeColor=#d6b656;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="1000" y="415" width="190" height="86" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="37" value="Output: Feature matrices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#7d5a00;" vertex="1" parent="1">
+      <mxGeometry x="1230" y="440" width="200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 3 to Phase 4 -->
+    <mxCell id="arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="30" target="40">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 4: FEATURE SELECTION & VALIDATION                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 4 outer block -->
+    <mxCell id="40" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="580" width="1490" height="120" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="41" value="04" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#b85450;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="620" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="42" value="Feature Selection &amp; Validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#6d0000;" vertex="1" parent="1">
+      <mxGeometry x="148" y="620" width="180" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Sub-boxes -->
+    <mxCell id="43" value="&lt;b&gt;ANOVA F-test&lt;/b&gt;&lt;br&gt;SelectKBest&lt;br&gt;K ∈ {10..ALL}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="595" width="190" height="86" as="geometry" />
+    </mxCell>
+    <mxCell id="44" value="&lt;b&gt;Anti-Leakage&lt;/b&gt;&lt;br&gt;F-stats computed&lt;br&gt;on training set only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="560" y="595" width="190" height="86" as="geometry" />
+    </mxCell>
+    <mxCell id="45" value="&lt;b&gt;Speaker-Safe Split&lt;/b&gt;&lt;br&gt;StratifiedGroupKFold&lt;br&gt;on subject_id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0de;strokeColor=#b85450;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="780" y="595" width="190" height="86" as="geometry" />
+    </mxCell>
+
+    <!-- Inner arrows -->
+    <mxCell id="inarrow3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="43" target="44">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="inarrow4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#b85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="44" target="45">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="46" value="Output: Reduced feature sets" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#6d0000;" vertex="1" parent="1">
+      <mxGeometry x="1010" y="620" width="210" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 4 to Phase 5 -->
+    <mxCell id="arrow4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="40" target="50">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 5: EXPERIMENTAL DESIGN                                -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 5 outer block -->
+    <mxCell id="50" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="760" width="1490" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="51" value="05" style="ellipse;whiteSpace=wrap;html=1;fillColor=#9673a6;strokeColor=#9673a6;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="795" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="52" value="Experimental Design" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#4a1d6b;" vertex="1" parent="1">
+      <mxGeometry x="148" y="795" width="175" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Sub-boxes -->
+    <mxCell id="53" value="&lt;b&gt;15 Train-Test Splits&lt;/b&gt;&lt;br&gt;4 individual + 6 pairs&lt;br&gt;+ 4 triples + 1 all" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="776" width="210" height="76" as="geometry" />
+    </mxCell>
+    <mxCell id="54" value="&lt;b&gt;Fixed Seed = 42&lt;/b&gt;&lt;br&gt;Full reproducibility" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="580" y="776" width="210" height="76" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="55" value="Output: Train / test pairs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#4a1d6b;" vertex="1" parent="1">
+      <mxGeometry x="1060" y="795" width="200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 5 to Phase 6 -->
+    <mxCell id="arrow5" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#9673a6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="50" target="60">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 6: CLASSIFICATION                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 6 outer block -->
+    <mxCell id="60" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="930" width="1490" height="150" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="61" value="06" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d79b00;strokeColor=#d79b00;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="990" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="62" value="Classification" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#7a4500;" vertex="1" parent="1">
+      <mxGeometry x="148" y="990" width="170" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ML sub-box -->
+    <mxCell id="63" value="&lt;b&gt;Machine Learning (7)&lt;/b&gt;&lt;br&gt;SVM · RF · XGBoost&lt;br&gt;LightGBM · CatBoost&lt;br&gt;LR · HistGradientBoost" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="945" width="220" height="116" as="geometry" />
+    </mxCell>
+
+    <!-- Ensemble sub-box -->
+    <mxCell id="64" value="&lt;b&gt;Ensemble Strategies (4)&lt;/b&gt;&lt;br&gt;Voting Hard · Voting Soft&lt;br&gt;Stacking · Bagging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="590" y="945" width="220" height="116" as="geometry" />
+    </mxCell>
+
+    <!-- Deep Learning sub-box -->
+    <mxCell id="65" value="&lt;b&gt;Deep Learning (3)&lt;/b&gt;&lt;br&gt;MLP · 1D-CNN&lt;br&gt;BiLSTM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="840" y="945" width="220" height="116" as="geometry" />
+    </mxCell>
+
+    <!-- Inner arrows between classification sub-boxes -->
+    <mxCell id="inarrow5" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="63" target="64">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="inarrow6" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="64" target="65">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="66" value="Output: Predictions&lt;br&gt;(15 classifiers × 7 configs)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#7a4500;" vertex="1" parent="1">
+      <mxGeometry x="1100" y="990" width="230" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Arrow from Phase 6 to Phase 7 -->
+    <mxCell id="arrow6" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2.5;strokeColor=#d79b00;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60" target="70">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 7: EVALUATION                                         -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- Phase 7 outer block -->
+    <mxCell id="70" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#2d7bbf;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+      <mxGeometry x="80" y="1140" width="1490" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Phase badge -->
+    <mxCell id="71" value="07" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2d7bbf;strokeColor=#2d7bbf;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="95" y="1175" width="40" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Phase label -->
+    <mxCell id="72" value="Evaluation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#0d3d6b;" vertex="1" parent="1">
+      <mxGeometry x="148" y="1175" width="170" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- Metric pill boxes -->
+    <mxCell id="73" value="&lt;b&gt;Accuracy&lt;/b&gt;&lt;br&gt;Overall correctness" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7bbf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="340" y="1158" width="175" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="74" value="&lt;b&gt;F1-Score&lt;/b&gt;&lt;br&gt;Macro-averaged" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7bbf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="535" y="1158" width="175" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="75" value="&lt;b&gt;MCC&lt;/b&gt;&lt;br&gt;Matthews Correlation&lt;br&gt;Range: −1 to +1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7bbf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="730" y="1158" width="175" height="74" as="geometry" />
+    </mxCell>
+    <mxCell id="76" value="&lt;b&gt;AUC-ROC&lt;/b&gt;&lt;br&gt;Discrimination ability&lt;br&gt;Seed = 42" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2d7bbf;fontSize=11;arcSize=12;" vertex="1" parent="1">
+      <mxGeometry x="925" y="1158" width="175" height="74" as="geometry" />
+    </mxCell>
+
+    <!-- Output label -->
+    <mxCell id="77" value="Output: Result matrices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;fontColor=#0d3d6b;" vertex="1" parent="1">
+      <mxGeometry x="1140" y="1175" width="200" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FIGURE CAPTION                                              -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <mxCell id="caption" value="Fig. 1. Proposed seven-phase system architecture for speech-based Parkinson's Disease detection." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2;" vertex="1" parent="1">
+      <mxGeometry x="80" y="1270" width="1490" height="30" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
