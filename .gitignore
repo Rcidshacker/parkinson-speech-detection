@@ -34,9 +34,9 @@ stage_1_baseline/comprehensive_analysis_report*.xlsx
 stage_1_baseline/pipeline_results_summary.xlsx
 stage_2_feature_grouping/Comprehensive_CMN_Results_Report.xlsx
 
-# ── LaTeX university report template (not project code) ──────────────────────
-CSE_BTech_Major_project_Internship_Report_template/
-CSE_BTech_Major_project_Internship_Report_template.zip
+# -- LaTeX university report template (not project code) --
+docs/report_template/
+docs/report_template.zip
 
 # ── Claude / IDE settings ─────────────────────────────────────────────────────
 .claude/

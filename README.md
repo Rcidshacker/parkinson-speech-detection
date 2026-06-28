@@ -202,7 +202,11 @@ BE mini project/
 ├── features/                       # Generated CSVs (gitignored)
 ├── results/                        # Evaluation outputs (gitignored)
 ├── logs/                           # Run logs (gitignored)
-├── Dataset/                        # Raw audio (gitignored — download separately)
+├── Dataset/                        # Raw audio (gitignored — download from Google Drive)
+├── docs/                           # Non-code assets
+│   ├── report_template/            # LaTeX university report template (gitignored)
+│   ├── report_template.zip         # (gitignored)
+│   └── pd_system_architecture.xml  # System architecture diagram
 │
 ├── PROJECT_SUMMARY.md              # Technical summary with full results
 ├── STAGES.md                       # Stage roadmap
